@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عبط الباسط</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#contact" id="contact-link">اتصال</a>
+            <a href="#projects" id="projects-link">المشاريع</a>
+            <a href="#about" id="about-link">عنّي</a>
+            <a href="#home" id="home-link">الرئيسية</a>
+        </nav>
+        <h1>مرحباً، أنا عبد الباسط</h1>
+    </header>
+
+    <div class="container">
+        <section id="home" class="text-right fade-in">
+            <h2>مرحبا بك في موقعي الشخصي</h2>
+            <p>أهلاً وسهلاً! أنا عبد الباسط، هنا يمكنك معرفة المزيد عن خلفيتي ومشاريعي.</p>
+        </section>
+
+        <section id="about" class="text-right slide-in">
+            <h2>عنّي</h2>
+            <p>👋مرحبا انا عبد الباسط</p>
+<p>👀 أنا مهتم بالبرمجة</p>
+<p>🌱أتعلم حاليا برمجة المواقع</p>
+<p>💞️ أتطلع إلى التعاون على GitHub</p>
+<p>📫 كيف تصل إلي ...هناك الكثير هههه</p>
+<p>😄 الضمائر: ...I..am</p>
+<p>⚡ حقيقة ممتعة: ...</p>
+        </section>
+
+        <section id="projects" class="text-right fade-in">
+    <h2>مشاريعي</h2>
+    <div class="projects-container">
+        <!-- مشروع 1 -->
+        <div class="project-item">
+            <h3>اختبار سرعة الإنترنت</h3>
+            <p>تحقق من سرعة اتصالك بالإنترنت باستخدام هذا الاختبار.</p>
+            <a href="https://abdou834.github.io/Internet-speed-test/" class="project-link" target="_blank">عرض المشروع</a>
+        </div>
+        <!-- مشروع 2 -->
+        <div class="project-item">
+            <h3>لعبة قذف الغوريلا</h3>
+            <p>تصميم لعبة قذف الغوريلا مع رسومات جذابة.</p>
+            <a href="https://abdou834.github.io/Gorilla-shooting-game-design/" class="project-link" target="_blank">عرض المشروع</a>
+        </div>
+        <!-- مشروع 3 -->
+        <div class="project-item">
+            <h3>آلة حاسبة</h3>
+            <p>آلة حاسبة بتصميم أنيق وبسيط.</p>
+            <a href="https://abdou834.github.io/calculator/" class="project-link" target="_blank">عرض المشروع</a>
+        </div>
+        <!-- مشروع 4 -->
+        <div class="project-item">
+            <h3>تصميم الأربعة مواسم</h3>
+            <p>تصميم تفاعلي يعرض الأربعة مواسم.</p>
+            <a href="https://abdou834.github.io/4-seasons-design/" class="project-link" target="_blank">عرض المشروع</a>
+        </div>
+        <!-- مشروع 5 -->
+        <div class="project-item">
+            <h3>ساعة إلكترونية</h3>
+            <p>ساعة إلكترونية بتصميم حديث.</p>
+            <a href="https://abdou834.github.io/Electronic-watch/" class="project-link" target="_blank">عرض المشروع</a>
+        </div>
+        <!-- مشروع 6 -->
+        <div class="project-item">
+            <h3>ساعة إلكترونية 2</h3>
+            <p>نسخة متقدمة من الساعة الإلكترونية.</p>
+            <a href="https://abdou834.github.io/Electronic-watch2/" class="project-link" target="_blank">عرض المشروع</a>
+        </div>
+    </div>
+</section>
+
+
+        <section id="contact" class="text-right slide-in">
+    <h2>اتصل بي</h2>
+    <p>يمكنك التواصل معي عبر:</p>
+    <ul class="social-links">
+        <li><a href="https://www.facebook.com/profile.php?id=61558960631513&locale=ar_AR" target="_blank" class="social-icon"><img src="Facebook.jpg" alt="Facebook"></a></li>
+        <li><a href="https://www.instagram.com/abdo._.27_/" target="_blank" class="social-icon"><img src="instagram.jpg" alt="Instagram"></a></li>
+        <li><a href="https://github.com/abdou834" target="_blank" class="social-icon"><img src="GitHub.jpg" alt="GitHub"></a></li>
+        <li><a href="https://forum.freecodecamp.org/u/abdelbassat/summary" class="social-icon"><img src="freecodecamp.png" alt="freecodecamp"></a></li>
+        <li><a href="https://open.spotify.com/user/31ecc2ik5zh5vaypsmkhsyyzmhwi" target="_blank" class="social-icon"><img src="spotify.png" alt="spotify"></a></li>
+        <li><a href="https://t.me/Its_DB_Cooper" target="_blank" class="social-icon"><img src="telegram.png" alt="telegram"></a></li>
+    </ul>
+</section>
+
+    </div>
+
+    <!-- Button to scroll to top -->
+    <button id="scrollToTop" class="scroll-btn">↑</button>
+
+    <!-- Button to toggle dark mode -->
+    <button id="toggleDarkMode" class="scroll-btn">🌙</button>
+
+    <footer>
+        <p>&copy; 2024 عبد الباسط. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        // Highlight active link based on scroll position
+        document.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const scrollPosition = window.scrollY + window.innerHeight;
+
+            sections.forEach(section => {
+                const link = document.querySelector(`nav a[href="#${section.id}"]`);
+                if (section.offsetTop < scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+
+        // Add class to trigger animations when sections come into view
+        function handleScroll() {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            const slideInElements = document.querySelectorAll('.slide-in');
+            const windowHeight = window.innerHeight;
+
+            fadeInElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('show');
+                }
+            });
+
+            slideInElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('show');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Define control buttons
+            const scrollToTopButton = document.getElementById('scrollToTop');
+            const toggleDarkModeButton = document.getElementById('toggleDarkMode');
+
+            // Scroll to top button functionality
+            scrollToTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Dark mode toggle button functionality
+            toggleDarkModeButton.addEventListener('click', function() {
+                const isDarkMode = document.body.classList.toggle('dark-mode');
+                
+                // Toggle button icon based on dark mode state
+                toggleDarkModeButton.textContent = isDarkMode ? '☀️' : '🌙';
+                
+                // Toggle scroll-to-top button visibility based on dark mode
+                if (isDarkMode) {
+                    scrollToTopButton.style.display = 'none';
+                } else {
+                    scrollToTopButton.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
