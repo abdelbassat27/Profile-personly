@@ -1,300 +1,171 @@
-/* Reset some default styles */
-body, h1, h2, p {
-    margin: 0;
-    padding: 0;
-}
-
-/* Base Styles */
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0; /* Light background for bright mode */
-    color: #333; /* Dark text for bright mode */
-    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-/* Header Styles */
 header {
-    background: #333; /* Dark background for bright mode */
-    color: #fff; /* Light text for bright mode */
-    padding: 20px 0;
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
     text-align: center;
-    transition: background 0.5s ease, transform 0.3s ease;
-}
-
-header:hover {
-    background: #555;
-    transform: scale(1.02);
-}
-
-h1, h2, h3, h4 {
-    margin: 0;
-    transition: color 0.5s ease;
-}
-
-header h1 {
-    font-size: 2.5em;
-}
-
-header:hover h1 {
-    color: #00bcd4;
-}
-
-/* Navigation Styles */
-nav {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-    padding: 0 20px;
-    flex-direction: row-reverse;
 }
 
 nav a {
-    color: #fff; /* Light text for bright mode */
-    margin: 0 15px;
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
-    padding: 10px;
+    padding: 10px 15px;
     display: inline-block;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-nav a:hover {
-    color: #00bcd4; /* Vibrant color on hover */
-    transform: translateY(-5px);
 }
 
 nav a.active {
-    color: #00bcd4; /* Highlighted color for active link */
-    font-size: 1.2em;
+    background: #00bcd4;
+    color: #fff;
+    border-radius: 5px;
 }
 
-/* Container Styles */
 .container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 10px 0;
 }
 
 /* Section Styles */
 section {
-    background: #fff; /* Light background for bright mode */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 20px 0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-section:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Fade-in Effect */
-.fade-in {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.fade-in.show {
-    opacity: 1;
-}
-
-/* Slide-in Effect */
-.slide-in {
-    opacity: 0;
-    transform: translateX(100%);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
-
-.slide-in.show {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Text Alignment and Styling */
+/* Text Alignment */
 .text-right {
     text-align: right;
-    direction: rtl;
-    padding: 20px;
 }
 
-.text-right h2 {
-    margin-top: 0;
-    font-size: 2em;
+/* Fade In Animation */
+.fade-in {
+    animation: fadeIn 1s ease-in;
 }
 
-.text-right p {
-    font-size: 1.2em;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Project Container Styles */
-.projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+/* Slide In Animation */
+.slide-in {
+    animation: slideIn 1s ease-in;
 }
 
-/* Individual Project Item Styles */
-.project-item {
-    background: #fff; /* Light background for bright mode */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
 }
 
-.project-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.project-item h3 {
-    margin: 0;
-    font-size: 1.5em;
-}
-
-.project-item p {
-    font-size: 1em;
-}
-
-.project-link {
-    display: inline-block;
-    margin-top: 10px;
-    text-decoration: none;
-    color: #00bcd4; /* Vibrant link color */
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.project-link:hover {
-    color: #008c9e;
-}
-
-/* Footer Styles */
-footer {
-    background: #333; /* Dark background for bright mode */
-    color: #fff; /* Light text for bright mode */
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
-}
-
-/* Scroll-to-top and Dark Mode Button Styles */
-.scroll-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px; /* Adjust position */
-    background: #00bcd4;
-    color: #fff;
-    border: none;
-    border-radius: 50%; /* Full circle */
-    width: 50px; /* Button width */
-    height: 50px; /* Button height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px; /* Icon size */
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.scroll-btn:hover {
-    background: #008c9e;
-    transform: scale(1.05);
-}
-
-.scroll-btn:focus {
-    outline: none;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #121212; /* Dark background for dark mode */
-    color: #e0e0e0; /* Light text for dark mode */
-}
-
-body.dark-mode header {
-    background-color: #1e1e1e; /* Dark header background */
-    color: #e0e0e0; /* Light text for dark mode */
-}
-
-body.dark-mode section {
-    background: #1e1e1e; /* Dark section background */
-    color: #e0e0e0; /* Light text in sections */
-}
-
-body.dark-mode .project-item {
-    background: #2c2c2c; /* Dark background for project items */
-    color: #e0e0e0; /* Light text for project items */
-}
-
-body.dark-mode .project-link {
-    color: #00bcd4; /* Vibrant link color for dark mode */
-}
-
-body.dark-mode .project-link:hover {
-    color: #008c9e;
-}
-
-/* Dark Mode Button */
-.dark-mode-btn {
-    position: fixed;
-    bottom: 80px;
-    left: 20px; /* Move the dark mode button to the left */
-    background: #00bcd4;
-    color: #fff;
-    border: none;
-    border-radius: 50%; /* Full circle */
-    width: 50px; /* Button width */
-    height: 50px; /* Button height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px; /* Icon size */
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.dark-mode-btn:hover {
-    background: #008c9e;
-    transform: scale(1.05);
-}
-
-.dark-mode-btn:focus {
-    outline: none;
-}
-
-/* Hide scroll-to-top button in dark mode */
-body.dark-mode #scrollToTop {
-    display: none;
-}
-/* Social Links Styles */
+/* Social Links */
 .social-links {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 15px;
 }
 
 .social-links li {
-    display: inline-block;
+    display: inline;
+    margin: 0 10px;
 }
 
 .social-icon img {
-    width: 40px; /* Adjust icon size as needed */
-    height: 40px;
-    transition: transform 0.3s ease;
+    width: 30px;
+    height: 30px;
 }
 
-.social-icon:hover img {
-    transform: scale(1.1);
+/* Form Styles */
+.contact-form {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.contact-form button {
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #008c9e;
+}
+
+/* Scroll to Top Button */
+.scroll-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode header {
+    background: #222;
+}
+
+body.dark-mode .contact-form {
+    background: #444;
+    border-color: #666;
+}
+
+body.dark-mode .scroll-btn {
+    background: #666;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
 }
