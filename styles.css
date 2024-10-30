@@ -9,8 +9,8 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0; /* Light background for bright mode */
-    color: #333; /* Dark text for bright mode */
+    background-color: #f0f0f0;
+    color: #333;
     line-height: 1.6;
 }
 
@@ -23,23 +23,83 @@ header {
     transition: background 0.5s ease, transform 0.3s ease;
 }
 
-header:hover {
-    background: #555;
-    transform: scale(1.02);
+/* أسلوب الهيدر العام */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    position: relative;
 }
 
-h1, h2, h3, h4 {
-    margin: 0;
-    transition: color 0.5s ease;
+/* تنسيق الشعار */
+.logo img {
+    width: 60px; /* حجم الشعار */
+    height: auto;
 }
 
-header h1 {
-    font-size: 2.5em;
+/* قائمة التنقل */
+.nav-links {
+    display: flex;
+    gap: 15px;
 }
 
-header:hover h1 {
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
     color: #00bcd4;
 }
+
+/* تنسيق أيقونة الهمبرغر */
+.hamburger-menu {
+    display: none; /* إخفاء في الشاشات الكبيرة */
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+    transition: transform 0.3s ease;
+}
+
+/* إعدادات الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* إخفاء القائمة في الشاشات الصغيرة */
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+}
+
+/* نمط القائمة عند التفعيل */
+.nav-links.show {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 
 /* Navigation Styles */
 nav {
@@ -185,21 +245,20 @@ footer {
     margin-top: 20px;
 }
 
-/* Scroll-to-top and Dark Mode Button Styles */
 .scroll-btn {
     position: fixed;
     bottom: 20px;
-    right: 20px; /* Adjust position */
+    right: 20px;
     background: #00bcd4;
     color: #fff;
     border: none;
-    border-radius: 50%; /* Full circle */
-    width: 50px; /* Button width */
-    height: 50px; /* Button height */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px; /* Icon size */
+    font-size: 24px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -213,7 +272,6 @@ footer {
 .scroll-btn:focus {
     outline: none;
 }
-
 /* Dark Mode Styles */
 body.dark-mode {
     background-color: #121212; /* Dark background for dark mode */
@@ -243,21 +301,20 @@ body.dark-mode .project-link:hover {
     color: #008c9e;
 }
 
-/* Dark Mode Button */
 .dark-mode-btn {
     position: fixed;
     bottom: 80px;
-    left: 20px; /* Move the dark mode button to the left */
+    left: 20px;
     background: #00bcd4;
     color: #fff;
     border: none;
-    border-radius: 50%; /* Full circle */
-    width: 50px; /* Button width */
-    height: 50px; /* Button height */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px; /* Icon size */
+    font-size: 24px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
